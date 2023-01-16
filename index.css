@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+.body-style {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Playfair Display', serif;
+    color: #D5D6BD ;
+    background-color: #3D6071 ;
+}
+
+.nav-bar {
+    border: 3px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-bar-elem {
+    margin: 10px;
+}
+
+.text-style {
+    padding: 0px 0px 0px 0px;
+}
+
+.button {
+    background-color: #3D6071;
+    border: none;
+    color: #D0D1B6;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Playfair Display', serif;
+}
+
+.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #3D6071;
+    color: #D5D6BD;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #3D6071;
+    color: #D5D6BD;
+}
+
+input[type=submit] {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #3D6071;
+    color: #D5D6BD;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #3D6071;
+    color: #D5D6BD;
+}
+
+textarea::placeholder {
+    color: #D5D6BD;
+    opacity: 0.6;
+}
+
+select {
+    width: 100%;
+    padding: 12px 12px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    float: right;
+    background-color: #3D6071;
+    color: #D5D6BD;
+}
+
+.drivers-list {
+    font-size: 30px;
+}

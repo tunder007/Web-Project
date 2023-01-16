@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A Car-Sharing Web Application">
+    <meta name="keywords" content="Car Car-Sharing Google-Maps">
+    <meta name="author" content="Damian Tudor Christian, Ciuntu Sorin Andrei">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Ober Rides</title>
+</head>
+
+<body class="body-style">
+    <div class="nav-bar">
+        <h1 class="text-style nav-bar-elem">OBER RIDES</h1>
+        <h1 class="nav-bar-elem"><a href="driver-acc.html"><button class="button">Log In As Driver</button></a></h1>
+        <h1 class="nav-bar-elem"><a href="passenger-acc.html"><button class="button">Sign Out</button></a></h1>
+    </div>
+    </br>
+    <!-- Passengers should be able to enter the start and end destinations (for example, Eindhoven to Delft) in the main interface. -->
+    <h3>You are now signed in!</h3>
+
+    <br>
+    <h2>Where are you now and where is the final destination?</h2>
+    <form action="hardcode.html"> <!-- google maps-->
+        <label for="start-city">Start City/Town:</label>
+        <select id="start-city" name="start-city">
+            <option value="amsterdam">Amsterdam</option>
+            <option value="delft">Delft</option>
+            <option value="den-helder">Den Helder</option>
+            <option value="eindhoven">Eindhoven</option>
+            <option value="kampen">Kampen</option>
+            <option value="katwijk">Katwijk</option>
+            <option value="leeuwarden">Leeuwarden</option>
+            <option value="leiden">Leiden</option>
+            <option value="lelystad">Lelystad</option>
+            <option value="lisse">Lisse</option>
+            <option value="maastricht">Maastricht</option>
+            <option value="marken">Marken</option>
+            <option value="meppel">Meppel</option>
+            <option value="middelburg">Middelburg</option>
+            <option value="nijmegen">Nijmegen</option>
+            <option value="oss">Oss</option>
+            <option value="renkum">Renkum</option>
+            <option value="rheden">Rheden</option>
+            <option value="rijswijk">Rijswijk</option>
+            <option value="roermond">Roermond</option>
+            <option value="roosendaal">Roosendaal</option>
+            <option value="rotterdam">Rotterdam</option>
+            <option value="groningen">Groningen</option>
+            <option value="kerkrade">Kerkrade</option>
+            <option value="schiedam">Schiedam</option>
+            <option value="s-hertogenbosch">'s-Hertogenbosch</option>
+            <option value="sittard">Sittard</option>
+            <option value="sneek">Sneek</option>
+            <option value="soest">Soest</option>
+            <option value="tegelen">Tegelen</option>
+            <option value="the-hague">The Hague</option>
+            <option value="tiel">Tiel</option>
+            <option value="tilburg">Tilburg</option>
+            <option value="utrecht">Utrecht</option>
+            <option value="velsen">Velsen</option>
+            <option value="venlo">Venlo</option>
+            <option value="vlaardingen">Vlaardingen</option>
+            <option value="vlissingen">Vlissingen</option>
+            <option value="volendam">Volendam</option>
+            <option value="zaanstad">Zaanstad</option>
+            <option value="zeist">Zeist</option>
+            <option value="zoetermeer">Zoetermeer</option>
+            <option value="zutphen">Zutphen</option>
+            <option value="zwolle">Zwolle</option>
+        </select> <br><br>
+        <label for="start-street">From Street:</label>
+        <input type="text" id="start-street" name="start-street"><br><br>
+        <label for="end-city">End City:</label>
+        <select id="end-city" name="end-city">
+            <option value="amsterdam">Amsterdam</option>
+            <option value="delft">Delft</option>
+            <option value="den-helder">Den Helder</option>
+            <option value="eindhoven">Eindhoven</option>
+            <option value="kampen">Kampen</option>
+            <option value="katwijk">Katwijk</option>
+            <option value="leeuwarden">Leeuwarden</option>
+            <option value="leiden">Leiden</option>
+            <option value="lelystad">Lelystad</option>
+            <option value="lisse">Lisse</option>
+            <option value="maastricht">Maastricht</option>
+            <option value="marken">Marken</option>
+            <option value="meppel">Meppel</option>
+            <option value="middelburg">Middelburg</option>
+            <option value="nijmegen">Nijmegen</option>
+            <option value="oss">Oss</option>
+            <option value="renkum">Renkum</option>
+            <option value="rheden">Rheden</option>
+            <option value="rijswijk">Rijswijk</option>
+            <option value="roermond">Roermond</option>
+            <option value="roosendaal">Roosendaal</option>
+            <option value="rotterdam">Rotterdam</option>
+            <option value="groningen">Groningen</option>
+            <option value="kerkrade">Kerkrade</option>
+            <option value="schiedam">Schiedam</option>
+            <option value="s-hertogenbosch">'s-Hertogenbosch</option>
+            <option value="sittard">Sittard</option>
+            <option value="sneek">Sneek</option>
+            <option value="soest">Soest</option>
+            <option value="tegelen">Tegelen</option>
+            <option value="the-hague">The Hague</option>
+            <option value="tiel">Tiel</option>
+            <option value="tilburg">Tilburg</option>
+            <option value="utrecht">Utrecht</option>
+            <option value="velsen">Velsen</option>
+            <option value="venlo">Venlo</option>
+            <option value="vlaardingen">Vlaardingen</option>
+            <option value="vlissingen">Vlissingen</option>
+            <option value="volendam">Volendam</option>
+            <option value="zaanstad">Zaanstad</option>
+            <option value="zeist">Zeist</option>
+            <option value="zoetermeer">Zoetermeer</option>
+            <option value="zutphen">Zutphen</option>
+            <option value="zwolle">Zwolle</option>
+        </select> <br><br>
+        <label for="end-street">To Street:</label>
+        <input type="text" id="end-street" name="end-street"><br><br>
+        <input type="submit" value="Search"><br><br>
+    </form>
+    <br>
+    <br>
+
+    <a href="index.html"><button class="button">Log out and go to main menu</button></a>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A Car-Sharing Web Application">
+    <meta name="keywords" content="Car Car-Sharing Google-Maps">
+    <meta name="author" content="Damian Tudor Christian, Ciuntu Sorin Andrei">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Ober Rides</title>
+</head>
+
+<body class="body-style">
+    <div class="nav-bar">
+        <h1 class="text-style nav-bar-elem">OBER RIDES</h1>
+        <h1 class="nav-bar-elem"><button class="button disabled">Driver</button></h1>
+        <h1 class="nav-bar-elem"><button class="button">Passenger</button></h1>
+    </div>
+    </br>
+    <h2>Do you already have an account? Log in:</h2>
+    <form action="passenger.html">
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" name="email" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Log In"><br><br>
+    </form>
+    <h2>If you don't have an account, please Sign Up:</h2>
+    <form action="passenger.html">
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" name="email" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <label for="userid">User ID:</label>
+        <input type="text" id="userid" name="userid" required><br><br>
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" required><br><br>
+        <label for="firstname">First Name(s):</label>
+        <input type="text" id="firstname" name="firstname" required><br><br>
+        <label for="address">Home Address:</label>
+        <input type="text" id="address" name="address" required><br><br>
+        <label for="nationality">Nationality:</label>
+        <input type="text" id="nationality" name="nationality" required><br><br>
+        <label for="zipcode">Zip Code:</label>
+        <input type="text" id="zipcode" name="zipcode" required><br><br>
+        <label for="sex">Sex:</label> <br> <br>
+        <span>
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="sex" value="male"><br><br>
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="sex" value="female"><br><br>
+            <label for="other">Other</label>
+            <input type="radio" id="other" name="sex" value="other"><br><br>
+            <label for="rathernotsay">Rather not say</label>
+            <input type="radio" id="rathernotsay" name="sex" value="rathernotsay"><br><br>
+        </span> <br> <br>
+        <label for="language">Languages you speak:</label> <br> <br>
+        <span>
+            <label for="english">English</label>
+            <input type="radio" id="english" name="language" value="english"><br><br>
+            <label for="dutch">Dutch</label>
+            <input type="radio" id="dutch" name="language" value="dutch"><br><br>
+            <label for="other">Other</label>
+            <input type="radio" id="other" name="sex" value="other"><br><br>
+            <label for="othertext">If you speak other languages, please specify:</label>
+            <input type="text" id="othertext" name="othertext"><br><br>
+        </span>
+        <label for="bio"></label>
+        <textarea id="bio" rows="5" cols="33" placeholder="This is your bio, which can help bring you closer to your driver:"></textarea> <br> <br>
+        <input type="submit" value="Sign Up"><br><br>
+    </form>
+    <a href="index.html"><button class="button">Go Back to Home Screen</button></a>
+</body>
+
+</html>
