@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A Car-Sharing Web Application">
+    <meta name="keywords" content="Car Car-Sharing Google-Maps">
+    <meta name="author" content="Damian Tudor Christian, Ciuntu Sorin Andrei">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Ober Rides</title>
+</head>
+
+<body class="body-style" onload="time()">
+    <div id="body" onclick="clickHandler()" onkeydown="keyDownHandler()">
+        <div class="nav-bar">
+            <h1 class="text-style nav-bar-elem">OBER RIDES</h1>
+            <h1 class="nav-bar-elem"><button class="button">Driver</button></h1>
+            <h1 class="nav-bar-elem"><button class="button disabled">Passenger</button></h1>
+        </div>
+        </br>
+        <h2>Do you already have an account? Log in:</h2>
+        <form action>
+            <label for="email">E-mail:</label>
+            <input type="text" id="logemail" name="logemail" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="logpassword" name="logpassword" required><br><br>
+            <button class="button" onClick="submitHandler()">Submit</button><br><br>
+        </form>
+        <h2>If you don't have an account, please Sign Up:</h2> <br> <br>
+        <div class='hide' id="numberofclicksdiv">
+            <p id="numberofclicks"></p> clicks have been made <br> <br>
+        </div>
+        <div class='hide' id="numberkeydowndiv">
+            <p id="numberkeydown"></p> keys have been pressed <br> <br>
+        </div>
+        <div class='hide' id="numbercharactersdiv">
+            <p id="numbercharacters"></p> characters have been typed <br> <br>
+        </div>
+        <div class='hide' id="timespentdiv">
+            <p id="timespent"></p> seconds spent on this page <br> <br>
+        </div>
+        <form>
+
+            <label for="email">E-mail:</label>
+            <input type="text" id="email" name="email" required
+                oninvalid="this.setCustomValidity('Please enter your email properly!')"
+                oninput="this.setCustomValidity('')"><br><br>
+            <div id="emailtext" class="hide">Well done<br><br> </div>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required minlength="12"
+                oninput="this.setCustomValidity('')"><br><br>
+            <div id="passwordtext" class="hide">Well done<br><br> </div>
+
+            <label for="userid">User ID:</label>
+            <input type="text" id="userid" name="userid" required minlength="5" maxlength="12"
+                oninvalid="this.setCustomValidity('Please enter your user ID properly!')"
+                oninput="this.setCustomValidity('')"><br><br>
+            <div id="usertext" class="hide">Well done<br><br> </div>
+
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Last Name" required pattern="[a-zA-Z'-'\s]*"
+                oninput="this.setCustomValidity('')"><br><br>
+            <div id="lastnametext" class="hide">Well done<br><br> </div>
+
+            <label for="firstname">First Name(s):</label>
+            <input type="text" id="firstname" name="firstname" placeholder="First Name" required
+                pattern="[a-zA-Z'-'\s]*" oninput="this.setCustomValidity('')"><br><br>
+            <div id="firstnametext" class="hide">Well done<br><br> </div>
+
+            <label for="address">Home Address:</label>
+            <input type="text" id="address" name="address"><br><br>
+
+            <label for="nationality">Nationality:</label>
+            <input type="text" id="nationality" name="nationality" required><br><br>
+            <div id="nationalitytext" class="hide">Well done<br><br> </div>
+
+            <label for="zipcode">Zip Code:</label>
+            <input type="text" id="zipcode" name="zipcode" required oninput="this.setCustomValidity('')"><br><br>
+            <div id="zipcodetext" class="hide">Well done<br><br> </div>
+
+            <label for="sex">Sex:</label> <br> <br>
+            <span>
+                <label for="male">Male</label>
+                <input type="radio" id="male" name="sex" value="male"><br><br>
+                <label for="female">Female</label>
+                <input type="radio" id="female" name="sex" value="female"><br><br>
+                <label for="other">Other</label>
+                <input type="radio" id="other" name="sex" value="other"><br><br>
+                <label for="rathernotsay">Rather not say</label>
+                <input type="radio" id="rathernotsay" name="sex" value="rathernotsay" checked><br><br>
+                <div id="sextext" class="hide">Well done<br><br> </div>
+            </span> <br> <br>
+
+            <label for="language">Languages you speak:</label> <br> <br>
+            <span>
+                <label for="english">English</label>
+                <input type="checkbox" id="english" name="language" value="english"><br><br>
+                <label for="dutch">Dutch</label>
+                <input type="checkbox" id="dutch" name="language" value="dutch"><br><br>
+                <label for="other">Other</label>
+                <input type="checkbox" id="otherlanguage" name="language" value="other"
+                    oninput="this.setCustomValidity('')"> <br> <br>
+                <label for="othertext">If you speak other languages, please specify:</label>
+                <input type="text" id="othertext" name="othertext"><br><br>
+                <div id="languagetext" class="hide">Well done<br><br> </div>
+            </span>
+
+            <label for="bio"></label>
+            <textarea id="bio" rows="5" cols="33"
+                placeholder="This is your bio, which can help bring you closer to your drivers:"></textarea> <br>
+            <br>
+            <button class="button" type="button" onClick="submitHandler()">Submit</button><br><br>
+        </form>
+
+        <a href="passenger.html"><button class="button">Go to passenger menu <br> (submit shows behavior)</button></a>
+        <a href="index.html"><button class="button">Go Back to Home Screen</button></a>
+    </div>
+</body>
+
+<script>
+
+    let a, b;
+    let keyDownCounter = 0;
+    let clickCounter = 0;
+    let characterCounter = 0;
+
+    function clickHandler() {
+        clickCounter++;
+    }
+
+    function keyDownHandler() {
+        keyDownCounter++;
+    }
+
+    function time() {
+        a = Date.now();
+    }
+
+    function languageChecker() {
+        const english = document.getElementById('english');
+        const dutch = document.getElementById('dutch');
+        const otherlanguage = document.getElementById('otherlanguage');
+        const zipcode = document.getElementById('zipcode').value;
+        const fnameValue = document.getElementById('firstname').value;
+        const lnameValue = document.getElementById('lastname').value;
+        const unameValue = document.getElementById('userid').value;
+        const passwordValue = document.getElementById('password').value;
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const uname = document.getElementById('userid');
+        const lname = document.getElementById('lastname');
+        const fname = document.getElementById('firstname');
+        const nationality = document.getElementById('nationality');
+        const zipcodePointer = document.getElementById('zipcode');
+        const bio = document.getElementById('bio');
+
+        // confirmation texts
+        const emailtext = document.getElementById('emailtext');
+        const passwordtext = document.getElementById('passwordtext');
+        const usertext = document.getElementById('usertext');
+        const lastnametext = document.getElementById('lastnametext');
+        const firstnametext = document.getElementById('firstnametext');
+        const nationalitytext = document.getElementById('nationalitytext');
+        const zipcodetext = document.getElementById('zipcodetext');
+        const languagetext = document.getElementById('languagetext');
+
+        characterCounter = fnameValue.length + lnameValue.length + unameValue.length + passwordValue.length + zipcode.length
+            + nationality.value.length + bio.value.length + email.value.length;
+
+        if (!english.checked && !dutch.checked && !otherlanguage.checked)
+            otherlanguage.setCustomValidity('You need to speak at least one language by now =))');
+        else
+            languagetext.style.display = 'block';
+
+        if (!((zipcode.charCodeAt(0) >= 48) && (zipcode.charCodeAt(0) <= 57)) ||
+            !((zipcode.charCodeAt(1) >= 48) && (zipcode.charCodeAt(1) <= 57)) ||
+            !((zipcode.charCodeAt(2) >= 48) && (zipcode.charCodeAt(2) <= 57)) ||
+            !((zipcode.charCodeAt(3) >= 48) && (zipcode.charCodeAt(3) <= 57)) ||
+            !((zipcode.charCodeAt(4) >= 65) && (zipcode.charCodeAt(4) <= 90)) ||
+            !((zipcode.charCodeAt(5) >= 65) && (zipcode.charCodeAt(5) <= 90)))
+            zipcodePointer.setCustomValidity('The pattern for a Dutch postal code is 4 digits followed by 2 letters');
+        else
+            zipcodetext.style.display = 'block';
+
+        if (!((fnameValue.charCodeAt(0) >= 65) && (fnameValue.charCodeAt(0) <= 90)))
+            fname.setCustomValidity('Your first name must start with a capital letter!');
+        else
+            firstnametext.style.display = 'block';
+
+        if (!((lnameValue.charCodeAt(0) >= 65) && (lnameValue.charCodeAt(0) <= 90)))
+            lname.setCustomValidity('Your last name must start with a capital letter!');
+        else
+            lastnametext.style.display = 'block';
+
+        if (!((unameValue.charCodeAt(0) >= 65) && (unameValue.charCodeAt(0) <= 90) && (unameValue.charCodeAt(unameValue.length - 1) >= 33) && (unameValue.charCodeAt(unameValue.length - 1) <= 64)))
+            uname.setCustomValidity('Your userID must start with a capital letter and end with a special character or number!');
+        else
+            usertext.style.display = 'block';
+
+        // password capital, noncapital letter, number and special char checker
+        let capitalPassChecker = false;
+        let noncapitalPassChecker = false;
+        let numberPassChecker = false;
+        let specialPassChecker = false;
+
+        for (let i = 0; i < passwordValue.length; i++) {
+            if (passwordValue.charCodeAt(i) >= 65 && passwordValue.charCodeAt(i) <= 90) {
+                capitalPassChecker = true;
+            }
+            else if (passwordValue.charCodeAt(i) >= 33 && passwordValue.charCodeAt(i) <= 47) {
+                specialPassChecker = true;
+            }
+            else if (passwordValue.charCodeAt(i) >= 58 && passwordValue.charCodeAt(i) <= 64) {
+                specialPassChecker = true;
+            }
+            else if (passwordValue.charCodeAt(i) >= 97 && passwordValue.charCodeAt(i) <= 122) {
+                noncapitalPassChecker = true;
+            }
+            else if (passwordValue.charCodeAt(i) >= 48 && passwordValue.charCodeAt(i) <= 57) {
+                numberPassChecker = true;
+            }
+        }
+
+        if (!capitalPassChecker || !noncapitalPassChecker || !numberPassChecker || !specialPassChecker) {
+            password.setCustomValidity('You password needs at least one uppercase letter, one lowercase letter, one number and one symbol');
+        }
+        else
+            passwordtext.style.diplay = 'block';
+
+        nationalitytext.style.display = 'block';
+        emailtext.style.display = 'block';
+        passwordtext.style.display = 'block';
+
+    }
+
+    function submitHandler() {
+        // check if the form is properly completed
+        languageChecker();
+        // show time, clicks, keydowns, and characters typed
+        let numberofclicks = document.getElementById('numberofclicks');
+        numberofclicks.innerHTML = clickCounter.toString();
+        numberofclicksdiv.style.display = 'block';
+        let numberkeydown = document.getElementById('numberkeydown');
+        numberkeydown.innerHTML = keyDownCounter.toString();
+        numberkeydowndiv.style.display = 'block';
+        let numbercharacters = document.getElementById('numbercharacters');
+        numbercharacters.innerHTML = characterCounter.toString();
+        numbercharactersdiv.style.display = 'block';
+        let timespent = document.getElementById('timespent');
+        timespent.innerHTML = ((Date.now() - a)/1000).toString();
+        timespentdiv.style.display = 'block';
+    }
+</script>
+
+</html>
